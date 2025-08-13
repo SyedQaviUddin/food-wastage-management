@@ -3,17 +3,30 @@ import pandas as pd
 import mysql.connector
 from mysql.connector import Error
 
+import streamlit as st
+import mysql.connector
 
-# --- DB connection (cached) ---
 @st.cache_resource
 def get_conn():
     return mysql.connector.connect(
-        host="127.0.0.1",          # or "localhost"
-        user="root",               # your MySQL username
-        password="88018035838686$Aa", # your MySQL password
-        database="food",           
-        auth_plugin='mysql_native_password' 
+        host=st.secrets["mysql"]["host"],
+        user=st.secrets["mysql"]["user"],
+        password=st.secrets["mysql"]["password"],
+        database=st.secrets["mysql"]["database"],
+        port=st.secrets["mysql"]["port"],
+        auth_plugin='mysql_native_password'
     )
+
+# --- DB connection (cached) ---
+#@st.cache_resource
+#def get_conn():
+ #   return mysql.connector.connect(
+  #      host="127.0.0.1",          # or "localhost"
+   #     user="root",               # your MySQL username
+    #    password="88018035838686$Aa", # your MySQL password
+     #   database="food",           
+      #  auth_plugin='mysql_native_password' 
+    #)
 
 def run_query(query, params=None):
     conn = get_conn()
@@ -378,5 +391,6 @@ PAGES = {
 
 choice = st.sidebar.selectbox("Menu", list(PAGES.keys()))
 PAGES[choice]()
+
 
 
