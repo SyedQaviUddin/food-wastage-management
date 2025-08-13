@@ -26,13 +26,21 @@ Includes **analytics**, **CRUD operations**, and **filters** for efficient donat
 ## 🗂️ Project Structure
 📁 food-wastage-management
 ├── main.py # Streamlit app
+
 ├── data_insert.sql # MySQL data to import in workbench
+
 ├── queries.sql # MySQL file with all queries
+
 ├── providers_clean.csv # Sample data
+
 ├── receivers_clean.csv
+
 ├── food_listings_clean.csv
+
 ├── claims_clean.csv
+
 ├── README.md
+
 └── LICENSE
 
 
