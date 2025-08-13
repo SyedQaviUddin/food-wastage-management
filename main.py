@@ -7,7 +7,7 @@ import streamlit as st
 
 @st.cache_resource
 def get_conn():
-    return sqlite3.connect("food_system.db", check_same_thread=False)
+    return sqlite3.connect("food wastage system/food_system.db", check_same_thread=False)
 
 # --- DB connection (cached) ---
 #@st.cache_resource
