@@ -1,37 +1,46 @@
-# 🍽️ Local Food Wastage Management System
+## 🍽️ Local Food Wastage Management System
+A Streamlit-based web application that connects food providers and receivers to reduce food wastage.
+It uses a SQLite database (food_system.db) to store and manage providers, receivers, food listings, and claims.
+Includes analytics, CRUD operations, and filters for efficient donation matching — all without requiring a MySQL server.
 
-A **Streamlit-based web application** that connects **food providers** and **receivers** to reduce food wastage.  
-It uses a **MySQL database** to store and manage providers, receivers, food listings, and claims.  
-Includes **analytics**, **CRUD operations**, and **filters** for efficient donation matching.
+# 🚀 Features
+📌 Browse Food Listings with filters by city, provider type, and food type.
 
----
+📞 View provider and receiver contact details in listings/claims.
 
-## 🚀 Features
-- 📌 **Browse Food Listings** with filters by city, provider type, and food type.
-- 📞 View **provider and receiver contact details** in listings/claims.
-- ✏️ Full **CRUD operations** (Add, Edit, Delete) for:
-  - Providers
-  - Receivers
-  - Food Listings
-- 📊 **Analytics Dashboard** with 15 SQL queries displayed as tables and charts.
-- 📈 Visual insights into:
-  - Top providers
-  - Claim status distribution
-  - Listings nearing expiry
-  - Quantity distributions
-- 🔒 Role-based access (Admin, Provider, Receiver).
+✏️ Full CRUD operations (Add, Edit, Delete) for:
 
----
+Providers
+
+Receivers
+
+Food Listings
+
+## 📊 Analytics Dashboard with 15 SQL queries displayed as tables and charts.
+
+# 📈 Visual insights into:
+
+Top providers
+
+Claim status distribution
+
+Listings nearing expiry
+
+Quantity distributions
+
+# 🔒 Role-based access (Admin, Provider, Receiver).
+
+# 💾 Uses SQLite for easy deployment (no external DB setup needed).
 
 ## 🗂️ Project Structure
+bash
+Copy code
 📁 food-wastage-management
-├── main.py # Streamlit app
+├── main.py                 # Streamlit app (SQLite version)
 
-├── data_insert.sql # MySQL data to import in workbench
+├── food_system.db          # SQLite database file
 
-├── queries.sql # MySQL file with all queries
-
-├── providers_clean.csv # Sample data
+├── providers_clean.csv     # Sample data
 
 ├── receivers_clean.csv
 
@@ -43,32 +52,26 @@ Includes **analytics**, **CRUD operations**, and **filters** for efficient donat
 
 └── LICENSE
 
-
 ## ⚙️ Installation & Setup
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/SyedQaviUddin/food-wastage-management.git
-   cd food-wastage-management
-Install dependencies:
 
-Copy code
+1️⃣ Clone the repository
+
+git clone https://github.com/SyedQaviUddin/food-wastage-management.git
+cd food-wastage-management
+
+2️⃣ Install dependencies
+
 pip install -r requirements.txt
-**Setup Database:**
 
-Create a MySQL database named food.
+3️⃣ Create & Populate SQLite Database
+Run the script to create food_system.db and insert data from CSVs:
 
-Import data_insert.sql into your MySQL server:
+python load_csv_to_sqlite.py
+4️⃣ Run the App
 
-
-mysql -u root -p food < food_script.sql
-
-**Run the App:**
 streamlit run main.py
-
-
-
 ## 📦 Deployment
-To deploy on Streamlit Community Cloud:
+Deploy on Streamlit Community Cloud:
 
 Push this project to a public GitHub repository.
 
@@ -76,13 +79,10 @@ Connect GitHub to Streamlit Cloud.
 
 Set main.py as the entry point.
 
-Provide MySQL connection details in secrets.toml or switch to SQLite.
+Make sure food_system.db is included in the repo (or generate it on startup from CSVs).
 
-
-## 📜 License
+📜 License
 This project is licensed under the MIT License – see the LICENSE file for details.
 
-
-
-## 📧 Contact
-For queries or suggestions, reach out at  > sqavi037@gmail.com <
+📧 Contact
+For queries or suggestions, reach out at sqavi037@gmail.com
