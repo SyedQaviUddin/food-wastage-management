@@ -7,16 +7,15 @@ import streamlit as st
 import mysql.connector
 
 @st.cache_resource
-def get_conn():
+def get_connection():
     return mysql.connector.connect(
-        host=st.secrets["mysql"]["host"],
-        user=st.secrets["mysql"]["user"],
-        password=st.secrets["mysql"]["password"],
-        database=st.secrets["mysql"]["database"],
-        port=st.secrets["mysql"]["port"],
-        auth_plugin='mysql_native_password'
+        host="bnjglsog2qvis4hjcfac-mysql.services.clever-cloud.com",
+        user="uvycyi0crn7fp9tj",
+        password="fWicr2n6qnSpyUOxijXd",
+        database="bnjglsog2qvis4hjcfac",
+        port=3306,
+        auth_plugin="mysql_native_password"
     )
-
 # --- DB connection (cached) ---
 #@st.cache_resource
 #def get_conn():
@@ -391,6 +390,7 @@ PAGES = {
 
 choice = st.sidebar.selectbox("Menu", list(PAGES.keys()))
 PAGES[choice]()
+
 
 
 
