@@ -321,7 +321,7 @@ st.set_page_config(page_title="Local Food Wastage System", layout="wide")
 st.title("Food Wastage Management System")
 
 PAGES = {
-    "Home": lambda: st.subheader("Welcome to Local Food Wastage System\nUse the sidebar to navigate.\n created by Syed Qavi Uddin"),
+    "Home": lambda: st.subheader("Welcome to Local Food Wastage System\nUse the sidebar to navigate\ncreated by Syed Qavi Uddin"),
     "Browse Listings": browse_listings,
     "Provider Portal": provider_portal,
     "Receiver Portal": admin_receivers,
@@ -333,4 +333,5 @@ PAGES = {
 
 choice = st.sidebar.selectbox("Menu", list(PAGES.keys()))
 PAGES[choice]()
+
 
