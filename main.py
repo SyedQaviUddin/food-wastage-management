@@ -308,19 +308,29 @@ def analytics_page():
                     except Exception:
                         pass
 
+
+
+
+
+
+
+
+
 # ---------------- Main App ----------------
 st.set_page_config(page_title="Local Food Wastage System", layout="wide")
 st.title("Food Wastage Management System")
 
 PAGES = {
-    "Home": lambda: st.subheader("Welcome to Local Food Wastage System\nUse the sidebar to navigate."),
+    "Home": lambda: st.subheader("Welcome to Local Food Wastage System\nUse the sidebar to navigate.\n created by Syed Qavi Uddin"),
     "Browse Listings": browse_listings,
     "Provider Portal": provider_portal,
     "Receiver Portal": admin_receivers,
     "Admin - Providers": admin_providers,
     "Admin - Listings": admin_food_listings,
-    "Analytics": analytics_page
+    "Analytics": analytics_page,
+  
 }
 
 choice = st.sidebar.selectbox("Menu", list(PAGES.keys()))
 PAGES[choice]()
+
