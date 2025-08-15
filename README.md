@@ -33,9 +33,9 @@ Quantity distributions
 # 💾 Uses SQLite for easy deployment (no external DB setup needed).
 
 ## 🗂️ Project Structure
-bash
-Copy code
+
 📁 food-wastage-management
+
 ├── main.py                 # Streamlit app (SQLite version)
 
 ├── food_system.db          # SQLite database file
